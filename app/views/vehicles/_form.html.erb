@@ -1,0 +1,27 @@
+<%= form_for(vehicle, validate: true, remote: true ) do |f| %>
+  <% if vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+      <% vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Placa %>
+    <%= f.text_field :plate,validate: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Tipo_de_Vehiculo %>
+    <%= f.collection_select :vehicle_type_id, VehicleType.order(:name), :id, :name, validate: true,:prompt=>"Seleccione"  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registrar vehiculo"%>
+  </div>
+<% end %>

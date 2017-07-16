@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type document:</strong>
+  <%= @person.type_document %>
+</p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @person.document %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @person.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @person.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @person.phone %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @person.email %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%if current_user.admin? %>
+  <%= link_to 'Regresar', people_path %>
+<%else%>
+  <%= link_to 'Regresar', root_path%>
+<% end -%>

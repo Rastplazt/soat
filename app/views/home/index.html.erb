@@ -1,0 +1,20 @@
+<h1>Bienvenidos</h1>
+<p id="notice"><%= notice %></p>
+<p>Sistema de Seguro Obligatorio</p>
+<% if user_signed_in?%>
+  <%if @person_exist.nil? %>
+	<%= render "people/form" %>
+
+  <% else %>
+    <h2>Buscar matricula</h2>
+	<%= form_tag(register_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Buscar matricula" %>
+	<%= submit_tag "Buscar" %>
+	<% end %>
+	<%= link_to "Actualizar mis datos", edit_person_path(current_user) %>
+  <% end -%>
+      <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+<%else%>
+	<%= link_to "Iniciar sesion" , new_user_session_path%>
+	<%= link_to "Registrarse" , new_user_registration_path%>
+<% end -%>

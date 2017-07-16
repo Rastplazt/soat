@@ -1,0 +1,52 @@
+<%= form_for(purchase) do |f| %>
+  <% if purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+      <% purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :total_amount %>
+    <%if purchase.vehicle.nil? %>
+      <%= f.hidden_field :total_amount%>
+    <%else%>
+      <%= f.hidden_field :total_amount, value: purchase.vehicle.monto %>
+      <%= purchase.vehicle.monto %>
+    <% end -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :valid_since %>
+    <%= f.date_select :valid_since %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valid_until %>
+    <%= f.date_select :valid_until %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vehicle_id %>
+    <%if purchase.vehicle.nil? %>
+      <%= f.hidden_field :vehicle_id %>
+    <%else%>
+      <%= f.hidden_field :vehicle_id, value: purchase.vehicle.id %>
+      <%= purchase.vehicle.nombre_vehiculo %>
+    <% end -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_id %>
+    <%= f.text_field :payment_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

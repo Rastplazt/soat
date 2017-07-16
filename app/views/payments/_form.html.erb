@@ -1,0 +1,42 @@
+<%= form_for(payment) do |f| %>
+  <% if payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+      <% payment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Número de la tarjeta de Credito" %>
+    <%= f.text_field :numcard %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Nombre titular de tarjeta" %>
+    <%= f.text_field :name_owner %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Fecha_de_vencimiento %>
+    <%= f.date_select :expiry_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Codigo de seguridad(CVV)" %>
+    <%= f.number_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Número_de_cuotas %>
+    <%= f.number_field :dues_number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

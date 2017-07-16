@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @vehicle_type.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vehicle_type.name %>
+</p>
+
+<p>
+  <strong>Subtype:</strong>
+  <%= @vehicle_type.subtype %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @vehicle_type.year %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @vehicle_type.tax %>
+</p>
+
+<p>
+  <strong>Prime:</strong>
+  <%= @vehicle_type.prime %>
+</p>
+
+<p>
+  <strong>Fosyga:</strong>
+  <%= @vehicle_type.fosyga %>
+</p>
+
+<p>
+  <strong>Runt:</strong>
+  <%= @vehicle_type.runt %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_type_path(@vehicle_type) %> |
+<%= link_to 'Back', vehicle_types_path %>

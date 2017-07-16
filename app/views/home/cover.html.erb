@@ -1,0 +1,46 @@
+<section>
+<div class= "col-lg-12">
+	<div class= "col-lg-6">
+	<h1>Coberturas</h1>
+		
+	Placa del Vehiculo<br>
+	<%= @vehicle.plate %><br>
+
+	Tipo de vechiculo:<br>
+	<%= @vehicle.vehicle_type.name %><br>
+
+	Subtipo:<br>
+	<%= @vehicle.vehicle_type.subtype %><br>
+
+	Año:<br>
+	<%= @vehicle.vehicle_type.year %><br>
+
+	</div>
+	<h1>Datos a pagar por SOAT</h1>
+	<div class= "col-lg-6">
+		
+	Valor de la prima<br>
+	<%= @vehicle.vehicle_type.prime %><br>
+
+	Fosyga:<br>
+	<%= @vehicle.monto_fosyga %><br>
+
+	Tasa RUNT:<br>
+	<%= @vehicle.vehicle_type.runt %><br>
+
+	Total a pagar:<br>
+	<%= @vehicle.monto %><br>
+	</div>
+	<p>
+	<br>	
+	Coberturas ofrecidas por el seguro:
+	una:<br>
+	■ Muerte y gastos funerarios: 750 SMLDV<br>
+	■ Gastos médicos: 800 SMLDV<br>
+	■ Incapacidad permanente: 180 SMLDV<br>
+	■ Gastos de transporte: 10 SMLDV<br>
+
+	</p>
+</div>
+<%= link_to 'Formalizar compra', new_payment_path %>
+</section>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numcard:</strong>
+  <%= @payment.numcard %>
+</p>
+
+<p>
+  <strong>Name owner:</strong>
+  <%= @payment.name_owner %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @payment.expiry_date %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @payment.code %>
+</p>
+
+<p>
+  <strong>Dues number:</strong>
+  <%= @payment.dues_number %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

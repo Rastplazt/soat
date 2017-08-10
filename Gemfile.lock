@@ -187,6 +187,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap-sass
   byebug
   client_side_validations (~> 9.1)

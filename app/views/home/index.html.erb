@@ -8,7 +8,7 @@
   <% else %>
     <h2>Buscar matricula</h2>
 	<%= form_tag(register_path, :method => "get", id: "search-form") do %>
-	<%= text_field_tag :search, params[:search], placeholder: "Buscar matricula" %>
+	<%= text_field_tag :search, params[:search], placeholder: "Buscar matricula", minlength: '3', maxlength: '10' %>
 	<%= submit_tag "Buscar" %>
 	<% end %>
 	<%= link_to "Actualizar mis datos", edit_person_path(current_user) %>

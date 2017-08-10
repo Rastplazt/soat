@@ -13,7 +13,7 @@ gem 'seed_migration'
 
 gem 'validates_timeliness', '~> 4.0'
 
-#ruby '2.4.0'
+ruby '2.4.0'
 gem 'client_side_validations', '~> 9.1'
 
 gem 'devise'

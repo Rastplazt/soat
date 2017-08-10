@@ -1,0 +1,9 @@
+<h1>New Person</h1>
+
+<%= render 'form', person: @person %>
+
+<%if current_user.admin? %>
+  <%= link_to 'Regresar', root_path %>
+<%else%>
+  <%= link_to 'Regresar', people_path %>
+<% end -%>
